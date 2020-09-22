@@ -1,0 +1,13 @@
+{
+  "name": "assert-junit-reports",
+  "version": "1.0.0",
+  "main": "bin/index.js",
+  "license": "MIT",
+  "author": "vasyl@stashuk.com",
+  "bin": {
+    "assert-junit-reports": "./bin/index.js"
+  },
+  "dependencies": {
+    "xml2js": "^0.4.23"
+  }
+}
