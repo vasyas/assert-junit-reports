@@ -48,7 +48,7 @@ function assertTestSuites({testsuite, testsuites}) {
   if (testsuites) {
     suites = Array.isArray(testsuites.testsuite) ? testsuites.testsuite : [testsuites.testsuite];
   } else {
-    suites = testsuite;
+    suites = [testsuite];
   }
 
   for (const suite of suites) {
