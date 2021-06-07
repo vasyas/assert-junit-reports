@@ -42,10 +42,16 @@ for (const file of files) {
   }
 }
 
-function assertTestSuites({testsuites}) {
-  const testsuite = Array.isArray(testsuites.testsuite) ? testsuites.testsuite : [testsuites.testsuite]
+function assertTestSuites({testsuite, testsuites}) {
+  let suites;
 
-  for (const suite of testsuite) {
+  if (testsuites) {
+    suites = Array.isArray(testsuites.testsuite) ? testsuites.testsuite : [testsuites.testsuite];
+  } else {
+    suites = testsuite;
+  }
+
+  for (const suite of suites) {
     if (suite.failures !== "0" || suite.errors !== "0") {
       console.log(`Test "${testsuites.name}.${suite.name}" failed, exiting`)
       process.exit(1)
